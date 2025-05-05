@@ -24,48 +24,19 @@ If you prefer using a computer with using a local development environment, the f
 1. **Git**: Ensure you have [Git](https://git-scm.com/downloads) installed on your computer.
 1. **Azure CLI**: Install the [Azure Command-Line Interface (CLI)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) to interact with Azure services and manage resources from the command line.
 1. **.NET SDK**: install [.NET SDK](https://dotnet.microsoft.com/en-us/download) to build and run .NET projects.
-1. **Docker**: Install [Docker Desktop](https://www.docker.com/products/docker-desktop) to build and run containerized applications.
-1. **Node.Js**: Install [Node.Js](https://nodejs.org/en/download/package-manager) to build and run web application.
-1. **Azure Development CLI**: Install [azd](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd) to be able to provision and deploy application to Azure.
-1. **bash/shell terminal**: the lessons assume bash/shell script syntax. If using Windows, either you can either using Git Bash (included when you install Git) or installing [WSL (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 Next you will need to clone this repo using:
 
 ```bash
-git clone https://github.com/Azure/intelligent-app-workshop.git
-```
-
-Change directory into cloned repo:
-
-```bash
-cd intelligent-app-workshop
+git clone https://github.com/ActiveSolution/active-aiacademy-semantic-kernel.git
 ```
 
 ## Initial Setup
 
-1. Copy and rename the file `appsettings.json.example` into the corresponding lesson directory as follows (example command for Lesson1):
+1. Update the `appsettings.json` file in the code/Lesson1 folder with the correct settings.
 
-    ```bash
-    cp workshop/dotnet/Lessons/appsettings.json.example workshop/dotnet/Lessons/Lesson1/appsettings.json
-    ```
-
-1. Create Azure Grounding with Bing Search resource. We will use this to ensure the LLM can get current data from the internet:
-
-    1. Create Bing Search Service (from Azure Portal):
-        1. Go to the [Azure Portal](https://portal.azure.com).
-        1. Click on [Create A Resource](https://ms.portal.azure.com/#create/hub)
-        1. On the search bar type **Grounding with Bing Search** and hit enter
-        1. Locate **Grounding with Bing Search** and click **Create**
-        1. On the **Create a Grounding with Bing Search Resource** page, provide the following information for the fields on the Basics tab:
-            * Subscription: The Azure subscription to used for your service.
-            * Resource group: The Azure resource group to contain your Bing service resource. You can create a new group or use a pre-existing group.
-            * Name: A descriptive and unique name for your Grounding with Bing Search Service resource, such as `grounding-bing-search-myid`.
-            * Region: Global (default).
-            * Pricing Tier: Grounding with Bing Search (default)
-            * Terms: Check the box to acknowledge the terms of use.
-        1. Click **Next**.
-        1. On the **Tags** tab click **Next**
-        1. Click **Create**.
+1. Go to the pre-created [Azure AI Foundry Hub](
+https://ai.azure.com/managementCenter/hub/overview?wsid=/subscriptions/473daaa7-1d63-4345-902f-f2d98875287b/resourceGroups/rg-skworkshop-sdc/providers/Microsoft.MachineLearningServices/workspaces/semantic-kernel-workshop&tid=e40b4f18-1174-4423-b6bd-9de65554c52f)
 
 1. Create an Azure AI Foundry Hub:
 
@@ -74,15 +45,15 @@ cd intelligent-app-workshop
     1. On the search bar type **Azure AI Foundry** and hit enter.
     1. Locate **Azure AI Foundry** and click **Create**.
     1. On the **Create Azure AI Foundry Hub** page, provide the following information for the fields on the Basics tab:
-        * Subscription: The Azure subscription to be used for your service.
-        * Resource group: The Azure resource group to contain your Azure AI Foundry Hub service resource. For simplicity, use the same resource group you used for the Bing Search grounding resource.
-        * Region: The location of your instance. Different locations can introduce latency, but they don't affect the runtime availability of your resource.
+        * Subscription: Select `Microsoft Azure Sponsorship`
+        * Resource group: Select `rg-agents-workshop`
+        * Region: Select `Sweden Central`
         * Name: A descriptive and unique name for your Azure AI Foundry Hub service resource, such as `aifoundryhub-sk-workshop-myid`.
     1. Click **Review + create**.
     1. Click **Create**.
     1. When the deployment is complete, click **Go to resource**
     1. Click **Launch Azure AI Foundry**
-
+    
 1. Create an Azure AI Foundry project:
 
     1. Click **New Project**
@@ -100,7 +71,7 @@ cd intelligent-app-workshop
     1. Click the **Models + endpoints*** tab (sidebar, left) to view currently deployed models.
     1. If your desired model is not deployed, click on **Deploy Model** then select to **Deploy Base Model**.
     1. You will need a chat completion model. For this workshop we recommend using `gpt-4o`. Select `gpt-4o` from the drop down and click **Confirm**.
-    1. Click **Customize** and choose the `2024-05-13` model. At the time of this workshop, this is the [latest version](https://learn.microsoft.com/en-us/azure/ai-services/agents/how-to/tools/bing-grounding?pivots=overview#setup) that integrates with Azure AI Agent Service, which we will use in Lesson 6.
+    1. Click **Customize** and choose the `2024-11-20` model. At the time of this workshop, this is the [latest version](https://learn.microsoft.com/en-us/azure/ai-services/agents/how-to/tools/bing-grounding?pivots=overview#setup) that integrates with Azure AI Agent Service, which we will use in Lesson 6.
     1. Adjust the Tokens per Minute Rate Limit to at least 250 requests per minute (RPM)
     1. Click **Deploy**.
         ![Terminal](./images/deploy-model.jpg)
@@ -120,7 +91,4 @@ cd intelligent-app-workshop
     1. Click **Connect**.
     1. From the Agents playground page, locate the **Knowledge** section and copy the name of the connection you just created and paste it as the **groundingWithBingConnectionId** value within the `AIFoundryProject` element in the `appSettings.json` file.
 
-1. Additionally, we need to obtain an API Key to be able to get stock prices from [polygon.io](https://polygon.io/dashboard/login). You can sign up for a free API Key by creating a login. This value will be needed for [Lesson 3](lesson3.md).
-    1. Once logged in, from the [polygon.io Dashboard](https://polygon.io/dashboard) locate the **Keys** section. Copy the default key value and paste it as the **apiKey** value within the `StockService` element in the `appsettings.json` file.
-
-By ensuring you have completed these prerequisites, you'll be well-prepared to dive into the Intelligent App Development Workshop and make the most of the hands-on learning experience.
+1. Additionally, we need to an API Key to be able to get stock prices from [polygon.io](https://polygon.io/dashboard/login). This value will be needed for [Lesson 3](lesson3.md). You will get the API key from Jakob, if he's in a good mood.
