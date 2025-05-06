@@ -60,12 +60,12 @@ https://ai.azure.com/managementCenter/hub/overview?wsid=/subscriptions/473daaa7-
 
     1. Click on **Playgrounds** on the left side.
     1. In the Agents playground box, click **Try the Agents playground**.
-    1. Choose your Azure OpenAI Service instance in the dropdown and click **Let's go**.
+    1. Choose your Azure OpenAI Service instance (ai-skworkshop-sdc_aoai) in the dropdown and click **Let's go**.
     1. Scroll down and find the `Knowledge` section on the right. Click **Add**.
         ![Addknowledge](./images/add-knowledge.jpg)
     1. Click **Grounding with Bing Search**.
     1. Click **Create connection**.
-    1. Find the resource you created and click **Add connection**.
+    1. Find your existing resource (groundingwithbingsearch) and click **Add connection**.
     1. Click **Connect**.
     1. From the Agents playground page, locate the **Knowledge** section and copy the name of the connection you just created and paste it as the **groundingWithBingConnectionId** value within the `AIFoundryProject` element in the `appSettings.json` file.
 
