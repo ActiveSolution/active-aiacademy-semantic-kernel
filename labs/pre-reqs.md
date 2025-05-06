@@ -9,21 +9,17 @@ Before attending the Intelligent App Development Workshop, please ensure you hav
 
 You have the option of using [Github Codespaces](https://docs.github.com/en/codespaces/getting-started/quickstart) or your local development environment.
 
-### Using Github Codespaces (recommended)
+### Using Github Codespaces
+If using Github Codespaces all prerequisites will be pre-installed.
 
-If using Github Codespaces all prerequisites will be pre-installed, however you will need to create a fork as follows:
-
-1. Navigate to this link to create a new [fork](https://github.com/Azure/intelligent-app-workshop/fork) (must be logged into your github account).
-1. Accept the default values and click on **"Create fork"** which will take you to the forked repository in the browser.
-1. From your forked repository click on the **"<> Code"** button. Then click on the **"Create codespace on main"** button.
-
+Click on the **"<> Code"** button. Then click on the **"Create codespace on main"** button.
 ### Using local development environment
 
 If you prefer using a computer with using a local development environment, the following pre-requisites need to be installed:
 
 1. **Git**: Ensure you have [Git](https://git-scm.com/downloads) installed on your computer.
 1. **Azure CLI**: Install the [Azure Command-Line Interface (CLI)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) to interact with Azure services and manage resources from the command line.
-1. **.NET SDK**: install [.NET SDK](https://dotnet.microsoft.com/en-us/download) to build and run .NET projects.
+1. **.NET 9.0 SDK**: install [.NET SDK](https://dotnet.microsoft.com/en-us/download) to build and run .NET projects.
 
 Next you will need to clone this repo using:
 
@@ -38,23 +34,7 @@ git clone https://github.com/ActiveSolution/active-aiacademy-semantic-kernel.git
 1. Go to the pre-created [Azure AI Foundry Hub](
 https://ai.azure.com/managementCenter/hub/overview?wsid=/subscriptions/473daaa7-1d63-4345-902f-f2d98875287b/resourceGroups/rg-skworkshop-sdc/providers/Microsoft.MachineLearningServices/workspaces/semantic-kernel-workshop&tid=e40b4f18-1174-4423-b6bd-9de65554c52f)
 
-1. Create an Azure AI Foundry Hub:
-
-    1. Go to the [Azure Portal](https://portal.azure.com).
-    1. Click on [Create A Resource](https://ms.portal.azure.com/#create/hub).
-    1. On the search bar type **Azure AI Foundry** and hit enter.
-    1. Locate **Azure AI Foundry** and click **Create**.
-    1. On the **Create Azure AI Foundry Hub** page, provide the following information for the fields on the Basics tab:
-        * Subscription: Select `Microsoft Azure Sponsorship`
-        * Resource group: Select `rg-agents-workshop`
-        * Region: Select `Sweden Central`
-        * Name: A descriptive and unique name for your Azure AI Foundry Hub service resource, such as `aifoundryhub-sk-workshop-myid`.
-    1. Click **Review + create**.
-    1. Click **Create**.
-    1. When the deployment is complete, click **Go to resource**
-    1. Click **Launch Azure AI Foundry**
-    
-1. Create an Azure AI Foundry project:
+1. Create an Azure AI Foundry project in this the hub:
 
     1. Click **New Project**
     1. Enter a name for your project
