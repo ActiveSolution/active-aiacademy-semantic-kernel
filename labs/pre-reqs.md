@@ -32,7 +32,7 @@ git clone https://github.com/ActiveSolution/active-aiacademy-semantic-kernel.git
 1. Update the `appsettings.json` file in the code/Lesson1 folder with the correct settings.
 
 1. Go to the pre-created [Azure AI Foundry Hub](
-https://ai.azure.com/managementCenter/hub/overview?wsid=/subscriptions/473daaa7-1d63-4345-902f-f2d98875287b/resourceGroups/rg-skworkshop-sdc/providers/Microsoft.MachineLearningServices/workspaces/semantic-kernel-workshop&tid=e40b4f18-1174-4423-b6bd-9de65554c52f)
+https://ai.azure.com/managementCenter/hub/overview?wsid=/subscriptions/473daaa7-1d63-4345-902f-f2d98875287b/resourceGroups/rg-skworkshop-sdc/providers/Microsoft.MachineLearningServices/workspaces/hub-skworkshop-sdc&tid=e40b4f18-1174-4423-b6bd-9de65554c52f)
 
 1. Create an Azure AI Foundry project in this the hub:
 
