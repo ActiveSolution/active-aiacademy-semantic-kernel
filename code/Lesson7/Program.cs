@@ -25,7 +25,7 @@ AgentsClient client = clientProvider.Client.GetAgentsClient();
 // Initialize the Conference Organizer agent
 var organizerAgent = await client.CreateAgentAsync(
     deployment,
-    "Organizer Agent",
+    "Conference Organizer Agent",
     instructions:
             """
             You are part of the organizer team for the GoodTech developer conference, and is in charge of evaluating proposals for conference talks.
