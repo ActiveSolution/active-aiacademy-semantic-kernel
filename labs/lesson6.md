@@ -66,7 +66,7 @@ In this lesson, we will add a Semantic Kernel Azure AI agent to our chatbot prog
         [
             bingGroundingTool
         ]);
-    var agent = new AzureAIAgent(definition, clientProvider)
+    var agent = new AzureAIAgent(definition, client)
     {
         Kernel = kernel,
     };
