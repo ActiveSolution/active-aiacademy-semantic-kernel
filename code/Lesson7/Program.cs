@@ -73,13 +73,13 @@ var softwareDeveloperAgent = await client.CreateAgentAsync(
     ]);
 
 
-var organizerAIAgent = new AzureAIAgent(organizerAgent, clientProvider)
+var organizerAIAgent = new AzureAIAgent(organizerAgent, client)
 {
     Kernel = kernel,
     Name = organizerAgent.Value.Name,    
 };
 
-var softwareDeveloperAIAgent = new AzureAIAgent(softwareDeveloperAgent, clientProvider)
+var softwareDeveloperAIAgent = new AzureAIAgent(softwareDeveloperAgent, client)
 {
     Kernel = kernel,
     Name = softwareDeveloperAgent.Value.Name
